@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework Helper</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Homework Helper 📚</h1>
+        <p>Ask your question, and AI will do its best to help you!</p>
+    </header>
+
+    <main>
+        <div class="input-container">
+            <textarea id="userQuestion" placeholder="Type your homework question here..." rows="4"></textarea>
+            <button id="submitButton">Ask AI</button>
+        </div>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.min.js"></script>
+
+        <div class="response-container">
+            <h2>AI's Response:</h2>
+            <div id="responseBox"></div>
+        </div>
+    </main>
+
+    <div class = "holes">
+        <div id="output"></div>
+        <div class="pdf-to-text">
+            <label for="pdfInput" class="label-file">Choose PDF File...</label>
+            <input type="file" id="pdfInput" accept="application/pdf" onchange="displayPDFName()">
+            <button onclick="convertPDFtoText()">Add PDF</button>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <h4>Made with ❤️ (and <a href="https://github.com/TheSman122333">powered by github</a>) by <a href="https://www.linkedin.com/in/treeman33/">Sriman Arya</a> (14, freshman at <a href="https://wihi.org">Wihi</a>, this project is made for High Seas Hack Club)</h4>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #4c8bf5;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.input-container {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    border: 2px solid #4c8bf5;
+    border-radius: 8px;
+    resize: none;
+}
+
+button {
+    padding: 15px;
+    font-size: 1rem;
+    background-color: #4c8bf5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #376cc6;
+}
+
+.response-container {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.response-container h2 {
+    margin-bottom: 10px;
+}
+
+#responseBox {
+    padding: 10px;
+    background-color: #f4f4f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    min-height: 50px;
+    font-size: 1rem;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #4c8bf5;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Keeps the footer at the bottom */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px; /* Fixed height to prevent size changes */
+    z-index: 10; /* Ensures the footer is above other elements */
+    overflow: hidden;
+    box-sizing: border-box; /* Ensures padding doesn't affect size */
+}
+
+h4{
+    font-family:Arial, Helvetica, sans-serif
+
+    PLACEHOLDER!!!! PLEASE CHANGE ME!!!!
+}
+
+a{
+    color: white;
+    padding: 0px;
+}
+
+
+#output {
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    min-height: 200px;
+    max-width:500px
+  }
+
+  .pdf-to-text {
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  }
+
+  .label-file {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  #pdfInput {
+    display: block;
+    margin-bottom: 10px;
+  }
