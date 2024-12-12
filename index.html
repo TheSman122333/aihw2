@@ -12,12 +12,16 @@
         <p>Ask your question, and AI will do its best to help you!</p>
     </header>
 
+    
+    <button id="startStopButton">Start Listening</button>
+    <div id="result"></div>
+
     <main>
         <div class="input-container">
             <textarea id="userQuestion" placeholder="Type your homework question here..." rows="4"></textarea>
             <button id="submitButton">Ask AI</button>
         </div>
-        
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.min.js"></script>
 
         <div class="response-container">
@@ -26,13 +30,12 @@
         </div>
     </main>
 
-    <div class = "holes">
-        <div id="output"></div>
-        <div class="pdf-to-text">
-            <label for="pdfInput" class="label-file">Choose PDF File...</label>
-            <input type="file" id="pdfInput" accept="application/pdf" onchange="displayPDFName()">
-            <button onclick="convertPDFtoText()">Add PDF</button>
-        </div>
+
+    <div id="output"></div>
+    <div class="pdf-to-text">
+        <label for="pdfInput" class="label-file">Choose PDF File...</label>
+        <input type="file" id="pdfInput" accept="application/pdf" onchange="displayPDFName()">
+        <button onclick="convertPDFtoText()">Add PDF</button>
     </div>
     
     <footer class="footer">

@@ -29,18 +29,9 @@ async function convertPDFtoText() {
             for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
                 const page = await pdf.getPage(pageNum);
                 const textContentPage = await page.getTextContent();
-                
-                // Extract and concatenate all text from the page
                 const pageText = textContentPage.items.map(item => item.str).join(' ');
                 textContent += `Page ${pageNum}:\n${pageText}\n\n`;
             }
-
-            /*if (textContent.length > 1024){
-                alert("This file is too large. In order for the AI to understand it, it must be less than 1024 characters.")
-            }*/
-            
-            //else{document.getElementById('output').textContent = textContent;}
-
             document.getElementById('output').textContent = textContent;
         } catch (error) {
             console.error('Error loading PDF:', error);
@@ -50,6 +41,50 @@ async function convertPDFtoText() {
 
     fileReader.readAsArrayBuffer(selectedFile);
 }
+
+const startStopButton = document.getElementById('startStopButton');
+const resultDiv = document.getElementById('result');
+
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+const recognition = new SpeechRecognition();
+recognition.interimResults = true;
+recognition.continuous = true;
+let listening = false;
+
+// Store the entire transcript
+let fullTranscript = '';
+
+recognition.onresult = (event) => {
+    for (let i = event.resultIndex; i < event.results.length; i++) {
+        if (event.results[i].isFinal) {
+            fullTranscript += event.results[i][0].transcript;
+        }
+    }
+    
+    resultDiv.innerHTML = fullTranscript; // Display the full transcript
+};
+
+recognition.onerror = (event) => {
+    console.error("Speech recognition error", event);
+};
+
+recognition.onend = () => {
+    listening = false;
+    startStopButton.textContent = 'Start Listening';
+};
+
+startStopButton.addEventListener('click', () => {
+    if (listening) {
+        recognition.stop();
+        listening = false;
+        startStopButton.textContent = 'Start Listening';
+    } else {
+        recognition.start();
+        listening = true;
+        startStopButton.textContent = 'Stop Listening';
+    }
+});
+
 
 submitButton.addEventListener('click', async () => {
     const question = userQuestion.value.trim();
@@ -63,10 +98,9 @@ submitButton.addEventListener('click', async () => {
     responseBox.innerHTML = 'Thinking... 🤔';
 
     try {
-        // Replace this with your Groq API call
         content = document.getElementById('output').textContent;
-        const response = await getAIResponse(question + content);
-        console.log(question+content)
+        const response = await getAIResponse(question + content + fullTranscript);
+        console.log(question+content+fullTranscript)
         responseBox.innerHTML = response;
     } catch (error) {
         responseBox.textContent = 'Oops! Something went wrong. Try again later. ( THIS MOST LIKELY MEANS THE FILE IS TOO LARGE... )';
