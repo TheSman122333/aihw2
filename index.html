@@ -14,7 +14,9 @@
 
     
     <button id="startStopButton">Start Listening</button>
-    <div id="result"></div>
+    <div id="result" contenteditable="true">
+        Start recording, Output will be displayed here.
+    </div>
 
     <main>
         <div class="input-container">
@@ -30,11 +32,12 @@
         </div>
     </main>
 
-
-    <div id="output"></div>
+    <div id="output" contenteditable="true">
+        Editable PDF output will be displayed here.
+    </div>
     <div class="pdf-to-text">
         <label for="pdfInput" class="label-file">Choose PDF File...</label>
-        <input type="file" id="pdfInput" accept="application/pdf" onchange="displayPDFName()">
+        <input type="file" id="pdfInput" accept="application/pdf" onchange="displayPDFName()" class="pdfbutton">
         <button onclick="convertPDFtoText()">Add PDF</button>
     </div>
     

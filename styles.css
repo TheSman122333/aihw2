@@ -12,6 +12,9 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    min-height: 100vh;
+    margin: 0;
+    padding-bottom: 80px; /* Add padding to prevent content from overlapping the footer */
 }
 
 header {
@@ -75,6 +78,7 @@ button:hover {
     max-width: 400px;
     min-height: 50px;
     margin-left: 5px;
+    border-radius: 12px;
 }
 
 
@@ -88,6 +92,7 @@ button:hover {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
+    background-color: #86d72f63;
 }
 
 .response-container h2 {
@@ -110,14 +115,13 @@ button:hover {
     padding: 15px 20px;
     background-color: #4c8bf5;
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-    position: fixed; 
+    position: fixed; /* Set back to fixed */
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 60px; 
-    z-index: 10; 
-    overflow: hidden;
-    box-sizing: border-box; 
+    height: 60px;
+    z-index: 10;
+    box-sizing: border-box;
 }
 
 h4 {
@@ -135,10 +139,12 @@ a {
     box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
     min-height: 200px;
     max-width: 500px;
-    min-width: 350px
+    min-width: 350px;
+    border-radius: 24px;
 }
 
 .pdf-to-text {
+    margin: 25px;
     border: 1px solid #ccc;
     padding: 20px;
     box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
@@ -146,6 +152,8 @@ a {
     flex-direction: row;
     align-items: center;
     gap: 15px;
+    background-color: #ca0b245e;
+    border-radius: 24px;
 }
 
 .label-file {
@@ -158,3 +166,4 @@ a {
     display: block;
     margin-bottom: 10px;
 }
+

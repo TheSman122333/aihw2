@@ -113,7 +113,7 @@ async function getAIResponse(userMessage) {
     const systemMessage = {
         role: "system",
         content: `
-            All you do is generate answers for users homework. If the user happens to upload alot of text, please try to create a study guide, with alot of related content from the pdf. If not, then just answer their question normally.
+            All you do is generate answers for users homework. If the user happens to upload alot of text, please try to create a study guide, with alot of related content from the pdf. If not, then just answer their question normally. Ignore all of the placeholder text if it is in the prompt.
         `
     };
       
