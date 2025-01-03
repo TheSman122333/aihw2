@@ -151,3 +151,4 @@ async function getAIResponse(userMessage) {
           return "Sorry, something went wrong!";
       }
 }
+
