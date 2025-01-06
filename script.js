@@ -134,7 +134,7 @@ async function getAIResponse(userMessage) {
                   },
                   body: JSON.stringify({
                       messages: messages,
-                      model: "mixtral-8x7b-32768",
+                      model: "llama-3.1-8b-instant",
                       stream: false,
                   }),
               }
